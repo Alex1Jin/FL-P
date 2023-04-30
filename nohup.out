@@ -1,0 +1,110 @@
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-n_fcmk26 because the default path (/home/user/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Traceback (most recent call last):
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1429, in <module>
+    fontManager = json_load(_fmcache)
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1012, in json_load
+    with open(filename, 'r') as fh:
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/matplotlib-n_fcmk26/fontlist-v330.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "parameterBoard.py", line 8, in <module>
+    from flTrainer import *
+  File "/home/user/ccc/FL-PLAS/flTrainer.py", line 7, in <module>
+    import matplotlib.pyplot as plt
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/pyplot.py", line 36, in <module>
+    import matplotlib.colorbar
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/colorbar.py", line 44, in <module>
+    import matplotlib.contour as contour
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/contour.py", line 16, in <module>
+    import matplotlib.font_manager as font_manager
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1431, in <module>
+    _rebuild()
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1424, in _rebuild
+    fontManager = FontManager()
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1075, in __init__
+    self.addfont(path)
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/font_manager.py", line 1095, in addfont
+    font = afm.AFM(fh)
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/afm.py", line 364, in __init__
+    self._kern, self._composite = _parse_optional(fh)
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/afm.py", line 353, in _parse_optional
+    d[key] = optional[key](fh)
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/afm.py", line 267, in _parse_kern_pairs
+    c1, c2, val = _to_str(vals[1]), _to_str(vals[2]), _to_float(vals[3])
+  File "/home/user/anaconda3/envs/tf/lib/python3.6/site-packages/matplotlib/afm.py", line 61, in _to_float
+    if isinstance(x, bytes):
+KeyboardInterrupt
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-n8vv0zns because the default path (/home/user/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+usage: parameterBoard.py [-h] [--batch_size N] [--lr LR] [--gamma M]
+                         [--no_cuda] [--seed S]
+                         [--local_training_epoch LOCAL_TRAINING_EPOCH]
+                         [--malicious_local_training_epoch MALICIOUS_LOCAL_TRAINING_EPOCH]
+                         [--num_nets NUM_NETS]
+                         [--part_nets_per_round PART_NETS_PER_ROUND]
+                         [--fl_round FL_ROUND] [--device DEVICE]
+                         [--dataname DATANAME] [--num_class NUM_CLASS]
+                         [--datadir DATADIR]
+                         [--partition_strategy PARTITION_STRATEGY]
+                         [--dir_parameter DIR_PARAMETER] [--model MODEL]
+                         [--load_premodel LOAD_PREMODEL]
+                         [--save_model SAVE_MODEL]
+                         [--client_select CLIENT_SELECT]
+                         [--malicious_ratio MALICIOUS_RATIO]
+                         [--trigger_label TRIGGER_LABEL]
+                         [--semantic_label SEMANTIC_LABEL]
+                         [--poisoned_portion POISONED_PORTION]
+                         [--backdoor_type BACKDOOR_TYPE]
+                         [--defense_method DEFENSE_METHOD] [--cut CUT]
+                         [--test TEST]
+parameterBoard.py: error: argument --malicious_ratio: expected one argument
+torch.Size([1, 10])
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-80cj613v because the default path (/home/user/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+usage: parameterBoard.py [-h] [--batch_size N] [--lr LR] [--gamma M]
+                         [--no_cuda] [--seed S]
+                         [--local_training_epoch LOCAL_TRAINING_EPOCH]
+                         [--malicious_local_training_epoch MALICIOUS_LOCAL_TRAINING_EPOCH]
+                         [--num_nets NUM_NETS]
+                         [--part_nets_per_round PART_NETS_PER_ROUND]
+                         [--fl_round FL_ROUND] [--device DEVICE]
+                         [--dataname DATANAME] [--num_class NUM_CLASS]
+                         [--datadir DATADIR]
+                         [--partition_strategy PARTITION_STRATEGY]
+                         [--dir_parameter DIR_PARAMETER] [--model MODEL]
+                         [--load_premodel LOAD_PREMODEL]
+                         [--save_model SAVE_MODEL]
+                         [--client_select CLIENT_SELECT]
+                         [--malicious_ratio MALICIOUS_RATIO]
+                         [--trigger_label TRIGGER_LABEL]
+                         [--semantic_label SEMANTIC_LABEL]
+                         [--poisoned_portion POISONED_PORTION]
+                         [--backdoor_type BACKDOOR_TYPE]
+                         [--defense_method DEFENSE_METHOD] [--cut CUT]
+                         [--test TEST]
+parameterBoard.py: error: argument --malicious_ratio: expected one argument
+torch.Size([1, 10])
+Matplotlib created a temporary config/cache directory at /tmp/matplotlib-nj9uc3ik because the default path (/home/user/.config/matplotlib) is not a writable directory; it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+usage: parameterBoard.py [-h] [--batch_size N] [--lr LR] [--gamma M]
+                         [--no_cuda] [--seed S]
+                         [--local_training_epoch LOCAL_TRAINING_EPOCH]
+                         [--malicious_local_training_epoch MALICIOUS_LOCAL_TRAINING_EPOCH]
+                         [--num_nets NUM_NETS]
+                         [--part_nets_per_round PART_NETS_PER_ROUND]
+                         [--fl_round FL_ROUND] [--device DEVICE]
+                         [--dataname DATANAME] [--num_class NUM_CLASS]
+                         [--datadir DATADIR]
+                         [--partition_strategy PARTITION_STRATEGY]
+                         [--dir_parameter DIR_PARAMETER] [--model MODEL]
+                         [--load_premodel LOAD_PREMODEL]
+                         [--save_model SAVE_MODEL]
+                         [--client_select CLIENT_SELECT]
+                         [--malicious_ratio MALICIOUS_RATIO]
+                         [--trigger_label TRIGGER_LABEL]
+                         [--semantic_label SEMANTIC_LABEL]
+                         [--poisoned_portion POISONED_PORTION]
+                         [--backdoor_type BACKDOOR_TYPE]
+                         [--defense_method DEFENSE_METHOD] [--cut CUT]
+                         [--test TEST]
+parameterBoard.py: error: argument --malicious_ratio: expected one argument
+torch.Size([1, 10])

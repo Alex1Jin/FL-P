@@ -162,12 +162,18 @@ class FederatedLearningTrainer(ParameterContainer):
 
         ################################################################ distribute data to clients before training
         if self.backdoor_type == 'semantic':
+            if self.dataname !='cifar10':
+                logger.info("wrong backdoor type")
+                sys.exit()
             dataidxs = self.net_dataidx_map[9999]
             clean_idx = self.net_dataidx_map[99991]
             poison_idx = self.net_dataidx_map[99992]
             train_data_loader_semantic = create_train_data_loader_semantic(train_data, self.batch_size, dataidxs,
                                                               clean_idx, poison_idx)
         if self.backdoor_type == 'edge-case':
+            if self.dataname !='cifar10':
+                logger.info("wrong backdoor type")
+                sys.exit()
             train_data_loader_edge = get_edge_dataloader(self.datadir, self.batch_size)
 
         if self.defense_method == 'fltrust':

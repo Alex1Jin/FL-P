@@ -163,13 +163,15 @@ if __name__ == "__main__":
         net_dataidx_map = partition_data(args.dataname, './dataset', args.partition_strategy, args.num_nets,
                                          args.dir_parameter,args.num_class)
 
-    elif args.backdoor_type == 'semantic':
+    elif args.backdoor_type == 'semantic' and args.dataname =="cifar10":
         net_dataidx_map = partition_data_semantic(args.dataname, './dataset', args.partition_strategy, args.num_nets,
                                          args.dir_parameter)
-    elif args.backdoor_type == 'edge-case':
+    elif args.backdoor_type == 'edge-case' and args.dataname == "cifar10":
         net_dataidx_map = partition_data(args.dataname, './dataset', args.partition_strategy, args.num_nets,
                                          args.dir_parameter,args.num_class)
-
+    else:
+        logger.info("wrong backdoor type")
+        sys.exit()
 
     ########################################################################################## load dataset
     train_data, test_data = load_init_data(dataname=args.dataname, datadir=args.datadir)
@@ -182,7 +184,7 @@ if __name__ == "__main__":
     elif args.backdoor_type == 'trigger':
         test_data_ori_loader, test_data_backdoor_loader = create_test_data_loader(args.dataname, test_data, args.trigger_label,
                                                      args.batch_size)
-    elif args.backdoor_type == 'semantic':
+    elif args.backdoor_type == 'semantic'and args.dataname =="cifar10":
         with open('./backdoorDataset/green_car_transformed_test.pkl', 'rb') as test_f:
             saved_greencar_dataset_test = pickle.load(test_f)
 
@@ -196,7 +198,7 @@ if __name__ == "__main__":
         test_data_ori_loader, test_data_backdoor_loader = create_test_data_loader_semantic(test_data, semantic_testset,
                                                                                            args.batch_size)
 
-    elif args.backdoor_type == 'edge-case':
+    elif args.backdoor_type == 'edge-case'and args.dataname =="cifar10":
         with open('./backdoorDataset/southwest_images_new_test.pkl', 'rb') as test_f:
             saved_greencar_dataset_test = pickle.load(test_f)
 
@@ -208,6 +210,9 @@ if __name__ == "__main__":
         semantic_testset.targets = sampled_targets_array_test
 
         test_data_ori_loader, test_data_backdoor_loader = create_test_data_loader_semantic(test_data, semantic_testset,args.batch_size)
+    else:
+        logger.info("wrong backdoor type")
+        sys.exit()
     logger.info("Test the model performance on the entire task before FL process ... ")
     overall_acc = test_model(net_avg, test_data_ori_loader, device, print_perform=False)
     logger.info("Test the model performance on the backdoor task before FL process ... ")
